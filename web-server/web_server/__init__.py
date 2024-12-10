@@ -21,7 +21,7 @@ def index():
 def socket_handler(ws):
     while True:
         msg = ws.receive()
-        app.logger.info(f"Recieved message {msg}")
+        app.logger.info(f"Received message {msg}")
 
 if __name__ != "__main__":
     gunicorn_logger = logging.getLogger("gunicorn.error")

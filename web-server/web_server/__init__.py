@@ -2,6 +2,8 @@
 
 __version__ = "0.1.0"
 
+import logging
+
 from flask import Flask, render_template
 from flask_sock import Sock
 
@@ -18,5 +20,10 @@ def index():
 @sock.route('/ws')
 def socket_handler(ws):
     while True:
-        data = ws.receive()
-        print(data)
+        msg = ws.receive()
+        app.logger.info(f"Recieved message {msg}")
+
+if __name__ != "__main__":
+    gunicorn_logger = logging.getLogger("gunicorn.error")
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)

@@ -19,14 +19,14 @@ function sendMsg(msg) {
 
 function startStream() {
   sendMsg({
-    stream: "mystream",
-    enabled: true,
+    topic: "/cameras/mystream/enabled",
+    value: true,
   });
 }
 
 function stopStream() {
   sendMsg({
-    stream: "mystream",
-    enabled: false,
+    topic: "/cameras/mystream/enabled",
+    value: false,
   });
 }

@@ -15,6 +15,15 @@
         src="{{ config['CAMERA_ADDRESS'] }}"
         scrolling="no"
       ></iframe>
+      <div>
+        <a href="#" class="button" id="start-button" onclick="startStream()">
+          Start Stream
+        </a>
+        <a href="#" class="button" id="stop-button" onclick="stopStream()">
+          Stop Stream
+        </a>
+      </div>
     </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
   </body>
 </html>

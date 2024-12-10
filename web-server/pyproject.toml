@@ -8,4 +8,8 @@ authors = [{ name = "Domenic Rodriguez", email = "DomenicP@users.noreply.github.
 license = { file = "LICENSE" }
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
-dependencies = ["flask"]
+dependencies = [
+    "flask==2.1.1",
+    "flask-sock",
+    "werkzeug<3",
+]

@@ -1,3 +1,7 @@
+"""Simple web server for camera streaming demo."""
+
+__version__ = "0.1.0"
+
 from flask import Flask, render_template
 
 app = Flask(__name__)

@@ -1,17 +1,18 @@
+VENV_DIR := .venv
+PIP := $(VENV_DIR)/bin/pip
+
 .PHONY: run
 run:
-	flask --app web_server:app run --debug --host 0.0.0.0
+	FLASK_APP=web_server:app flask run --debugger --host 0.0.0.0
 
 .PHONY: clean
 clean:
-	rm -rf web_server/__pycache__ .venv
+	rm -rf web_server/__pycache__ $(VENV_DIR)
 
 .PHONY: install
-install:
-	[ -d .venv ] || python3 -m venv .venv
-	.venv/bin/pip install -r requirements.lock
+install: $(VENV_DIR)
+	command -v flit >/dev/null || $(PIP) install flit
+	flit install
 
-.PHONY: lock
-lock:
-	.venv/bin/pip install -r requirements.txt
-	.venv/bin/pip freeze > requirements.lock
+$(VENV_DIR):
+	python3 -m venv $(VENV_DIR)

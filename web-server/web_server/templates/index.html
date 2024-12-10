@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="{{ url_for('static', filename='style.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>ECEA 5307: Camera Streaming Demo</h1>
+      <iframe
+        id="video"
+        src="{{ config['CAMERA_ADDRESS'] }}"
+        scrolling="no"
+      ></iframe>
+    </div>
+  </body>
+</html>

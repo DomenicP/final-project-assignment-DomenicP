@@ -1,0 +1,15 @@
+body {
+  font-family: sans-serif;
+}
+
+#wrapper {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#video {
+  width: 640px;
+  height: 480px;
+  background-color: #000;
+}
